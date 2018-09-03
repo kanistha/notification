@@ -1,0 +1,22 @@
+management:
+  security:
+    enabled: true
+
+spring:
+  session:
+    store-type: none
+
+cloud:
+  aws:
+    stack:
+      auto: false
+    region:
+      static: eu-central-1
+      auto: true
+    credentials:
+      instanceProfile: true
+      accessKey:
+      secretKey:
+
+application:
+  localStack: true

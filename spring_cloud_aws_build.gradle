@@ -1,0 +1,24 @@
+buildscript {
+
+	dependencies {
+		repositories {
+			mavenCentral()
+		}
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.3.RELEASE")
+		classpath("io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE")
+	}
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+dependencies {
+	compile('org.springframework.cloud:spring-cloud-starter-aws')
+	compile('org.springframework.cloud:spring-cloud-starter-aws-messaging')
+	//compile('org.springframework.cloud:spring-cloud-starter-aws-autoconfigure')
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-aws:2.0.0.RELEASE"
+	}
+}
